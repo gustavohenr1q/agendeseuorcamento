@@ -1,129 +1,298 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>P&H Estética Automotiva</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GHS Suporte Técnico</title>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header class="header">
-  <div class="logo">P&H <span>Estética Automotiva</span></div>
+  <nav class="navbar">
 
-  <nav>
-    <a href="#inicio">Início</a>
-    <a href="#servicos">Serviços</a>
-    <a href="#produtos">Produtos</a>
-    <a href="#loja">Loja</a>
-    <a href="#contato">Contato</a>
+    <a href="#inicio" class="mobile-logo">
+      <img src="img/logo-escura.png" alt="GHS Suporte Técnico">
+    </a>
+
+    <ul class="menu">
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#servicos">Especialidades</a></li>
+      <li><a href="#galeria">Serviços</a></li>
+      <li><a href="#avaliacoes">Avaliações</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+
   </nav>
-
-  <a class="btn-header" href="https://wa.me/5511972338253" target="_blank">
-    Fale comigo!
-  </a>
 </header>
 
-<section class="hero" id="inicio">
-  <div class="overlay"></div>
+<section id="inicio" class="hero">
 
-  <div class="hero-content">
-    <span class="tag">Loja • Lavagem • Produtos Automotivos</span>
+  <div class="hero-content animar">
 
-    <h1>Seu carro limpo, protegido e com acabamento profissional</h1>
+    <img
+      src="img/logow.png"
+      alt="GHS Suporte Técnico"
+      class="hero-logo"
+    >
+
+    <h1>
+      Seu aparelho consertado,
+      bem cuidado e pronto para usar.
+    </h1>
 
     <p>
-      Revenda de produtos automotivos, acessórios para estética e serviços de lavagem automotiva
-      com qualidade, cuidado e produtos profissionais.
+      Manutenção, troca de teclado,
+      troca de tela, limpeza interna,
+      formatação, otimização e suporte
+      técnico com cuidado e qualidade.
     </p>
 
     <div class="buttons">
-      <a href="https://wa.me/5511972338253" target="_blank" class="btn-primary">
-        Falar no WhatsApp
+
+      <a href="#galeria" class="btn secondary">
+        Ver trabalhos
       </a>
 
-      <a href="#servicos" class="btn-secondary">
-        Ver serviços
-      </a>
     </div>
+
   </div>
+
 </section>
 
-<section class="services" id="servicos">
+<section id="servicos" class="section">
+
   <div class="section-title">
-    <span class="tag">O que fazemos</span>
-    <h2>Serviços e soluções automotivas</h2>
-    <p>Atendimento para quem quer cuidar do carro ou comprar produtos de qualidade.</p>
+    <h2>Especialidades</h2>
   </div>
 
   <div class="cards">
-    <div class="card">
-      <h3>Lavagem Automotiva</h3>
-      <p>Lavagem externa e limpeza com atenção aos detalhes, deixando o veículo com aparência renovada.</p>
+
+    <div class="card animar">
+      <div class="icon">🛠️</div>
+
+      <h3>Manutenção de Hardware</h3>
+
+      <p>
+        Revisão completa do seu computador
+        ou notebook, troca de peças
+        ou montagem.
+      </p>
     </div>
 
-    <div class="card">
-      <h3>Revenda de Produtos</h3>
-      <p>Produtos para limpeza, acabamento, proteção, manutenção e estética automotiva.</p>
+    <div class="card animar">
+      <div class="icon">🧼</div>
+
+      <h3>Limpeza interna</h3>
+
+      <p>
+        Remoção de poeira, sujeira
+        e manutenção preventiva
+        do equipamento.
+      </p>
     </div>
 
-    <div class="card">
-      <h3>Acessórios e Equipamentos</h3>
-      <p>Paninhos, aplicadores, escovas, borrifadores, politrizes e itens para uso profissional.</p>
+    <div class="card animar">
+      <div class="icon">⚡</div>
+
+      <h3>Otimização</h3>
+
+      <p>
+        Deixamos o notebook mais rápido,
+        leve e pronto para o dia a dia.
+      </p>
     </div>
+
+    <div class="card animar">
+      <div class="icon">💻</div>
+
+      <h3>Formatação</h3>
+
+      <p>
+        Instalação de sistema,
+        programas básicos e
+        configurações iniciais.
+      </p>
+    </div>
+
   </div>
+
 </section>
 
-<section class="gallery" id="produtos">
-  <div class="section-title">
-    <span class="tag">Nossa loja</span>
-    <h2>Produtos profissionais disponíveis</h2>
-    <p>Trabalhamos com uma grande variedade de produtos para estética automotiva.</p>
-  </div>
+<section class="banner banner-one">
 
-  <div class="gallery-grid">
-    <img src="img/loja-aberta.jpg" alt="Produtos automotivos na loja">
-    <img src="img/politriz-vonixx.jpg" alt="Politriz Vonixx">
-    <img src="img/roto-orbital.jpg" alt="Equipamento automotivo">
-    <img src="img/produtos.jpg" alt="Linha de produtos automotivos">
-  </div>
-</section>
+  <div>
 
-<section class="store" id="loja">
-  <div class="store-text">
-    <span class="tag">Loja física</span>
-    <h2>Venha conhecer nossa loja</h2>
+    <h2>
+      Atendimento com qualidade,
+      confiança e transparência.
+    </h2>
 
     <p>
-      Além da revenda de produtos, também realizamos lavagem automotiva.
-      Aqui você encontra produtos, acessórios e atendimento para cuidar melhor do seu veículo.
+      Cada serviço é feito
+      com atenção aos detalhes.
     </p>
 
-    <a href="https://wa.me/5511972338253" target="_blank" class="btn-primary">
-      Chamar para orçamento
-    </a>
   </div>
 
-  <div class="store-image">
-    <a href="https://www.google.com/maps/place/PeH+acess%C3%B3rios+automotivos/@-23.5379279,-46.2287133,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce77162b203823:0xd710168882546944!8m2!3d-23.5379328!4d-46.2261384!16s%2Fg%2F11w4xbfdl0?entry=ttu&g_ep=EgoyMDI2MDQyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
-      <img src="img/fachada.jpg" alt="Fachada da loja P&H Estética Automotiva">
-    </a>
-  </div>
 </section>
 
-<section class="contact" id="contato">
-  <span class="tag">Contato</span>
-  <h2>Fale com a P&H</h2>
-  <p>Entre em contato pelo WhatsApp para consultar produtos, valores e serviços disponíveis.</p>
+<section id="galeria" class="section">
 
-  <a href="https://wa.me/5511972338253" target="_blank" class="btn-primary">
-    Entrar em contato agora
+  <div class="section-title">
+    <span>Serviços</span>
+    <h2>Serviços realizados</h2>
+  </div>
+
+  <div class="carousel-card animar">
+
+    <button
+      class="carousel-btn prev"
+      id="prevBtn"
+    >
+      ❮
+    </button>
+
+    <div class="carousel">
+
+      <img
+        id="carouselImage"
+        src="img/notebook-antes.jpeg"
+        alt="Serviço realizado"
+      >
+
+      <div class="carousel-info">
+
+        <h3 id="carouselTitle">
+          Notebook recebido
+        </h3>
+
+        <p id="carouselText">
+          Equipamento recebido
+          para avaliação e manutenção.
+        </p>
+
+      </div>
+
+    </div>
+
+    <button
+      class="carousel-btn next"
+      id="nextBtn"
+    >
+      ❯
+    </button>
+
+  </div>
+
+  <div
+    class="carousel-dots"
+    id="carouselDots"
+  ></div>
+
+</section>
+
+<section class="banner banner-two">
+
+  <div>
+
+    <h2>
+      Manutenção preventiva
+      evita problemas maiores.
+    </h2>
+
+    <p>
+      Cuide do seu equipamento
+      antes que ele pare de funcionar.
+    </p>
+
+  </div>
+
+</section>
+
+<section id="avaliacoes" class="section">
+
+  <div class="section-title">
+    <span>Avaliações</span>
+    <h2>O que os clientes dizem</h2>
+  </div>
+
+  <div class="reviews">
+
+    <div class="review animar">
+
+      <div class="stars">
+        ★★★★★
+      </div>
+
+      <p>
+        “Serviço excelente!
+        Meu notebook voltou
+        funcionando perfeitamente.”
+      </p>
+
+      <h4>Anna Clara</h4>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section id="contato" class="contact">
+
+  <h2>
+    Precisa de manutenção
+    ou suporte técnico?
+  </h2>
+
+  <p>
+    Chame agora no WhatsApp
+    e solicite um orçamento.
+  </p>
+
+  <a
+    href="https://wa.me/5511961305567"
+    target="_blank"
+    class="btn primary whatsapp-btn"
+  >
+
+    <img
+      src="img/whatsapp.png"
+      alt="WhatsApp"
+    >
+
+    Falar no WhatsApp
+
   </a>
+
 </section>
 
-<a class="whatsapp-float" href="https://wa.me/5511972338253" target="_blank">
-  <img src="img/whatsapp.png" alt="WhatsApp">
+<a
+  href="https://wa.me/5511961305567"
+  target="_blank"
+  class="whatsapp"
+>
+
+  <img
+    src="img/whatsapp.png"
+    alt="WhatsApp"
+  >
+
 </a>
+
+<footer>
+
+  <p>
+    © <span id="ano"></span>
+    GHS Suporte Técnico -
+    Todos os direitos reservados.
+  </p>
+
+</footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
