@@ -6,6 +6,7 @@
   <title>GHS Suporte Técnico</title>
 
   <link rel="stylesheet" href="style.css">
+ <link rel="icon" type="image/png" sizes="512x512" href="img/favicon.png">
 </head>
 <body>
 
@@ -16,11 +17,16 @@
       <img src="img/logo-escura.png" alt="GHS Suporte Técnico">
     </a>
 
-    <ul class="menu">
+    <button class="menu-toggle" id="menuToggle">
+      ☰
+    </button>
+
+    <ul class="menu" id="menu">
       <li><a href="#inicio">Início</a></li>
       <li><a href="#servicos">Especialidades</a></li>
       <li><a href="#galeria">Serviços</a></li>
       <li><a href="#avaliacoes">Avaliações</a></li>
+      <li><a href="#perguntas">FAQ</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
 
@@ -28,6 +34,9 @@
 </header>
 
 <section id="inicio" class="hero">
+
+  <div class="hero-blur blur-one"></div>
+  <div class="hero-blur blur-two"></div>
 
   <div class="hero-content animar">
 
@@ -43,9 +52,8 @@
     </h1>
 
     <p>
-      Manutenção, troca de teclado,
-      troca de tela, limpeza interna,
-      formatação, otimização e suporte
+      Manutenção, troca de teclado, troca de tela,
+      limpeza interna, formatação, otimização e suporte
       técnico com cuidado e qualidade.
     </p>
 
@@ -53,22 +61,40 @@
       <a href="#galeria" class="btn secondary">
         Ver trabalhos
       </a>
+
+      <a
+        href="https://wa.me/5511961305567"
+        target="_blank"
+        class="btn primary"
+      >
+        <img src="img/whatsapp.png" alt="WhatsApp">
+        Pedir orçamento
+      </a>
     </div>
+
+  
 
   </div>
 
   <div class="scroll-indicator">
-    <span>Role para baixo</span>
-    <i></i>
+  <span>Role para baixo</span>
+
+  <div class="mouse-scroll">
+    <div class="mouse-wheel"></div>
   </div>
+</div>
 
 </section>
 
 <section id="servicos" class="section">
 
-  <div class="section-title">
+  <div class="section-title animar">
     <span>Especialidades</span>
     <h2>O que eu faço</h2>
+    <p>
+      Serviços pensados para deixar seu equipamento mais limpo,
+      rápido, seguro e confiável.
+    </p>
   </div>
 
   <div class="cards">
@@ -77,9 +103,8 @@
       <div class="icon">🛠️</div>
       <h3>Manutenção de Hardware</h3>
       <p>
-        Revisão completa do seu computador
-        ou notebook, troca de peças
-        ou montagem.
+        Revisão completa do seu computador ou notebook,
+        troca de peças, testes e diagnóstico.
       </p>
     </div>
 
@@ -87,9 +112,8 @@
       <div class="icon">🧼</div>
       <h3>Limpeza interna</h3>
       <p>
-        Remoção de poeira, sujeira
-        e manutenção preventiva
-        do equipamento.
+        Remoção de poeira, sujeira e manutenção preventiva
+        para melhorar a vida útil do equipamento.
       </p>
     </div>
 
@@ -97,8 +121,8 @@
       <div class="icon">⚡</div>
       <h3>Otimização</h3>
       <p>
-        Deixamos o notebook mais rápido,
-        leve e pronto para o dia a dia.
+        Ajustes para deixar o sistema mais leve, rápido
+        e melhor para o uso diário.
       </p>
     </div>
 
@@ -106,9 +130,8 @@
       <div class="icon">💻</div>
       <h3>Formatação</h3>
       <p>
-        Instalação de sistema,
-        programas básicos e
-        configurações iniciais.
+        Instalação de sistema, programas básicos,
+        drivers e configurações iniciais.
       </p>
     </div>
 
@@ -118,25 +141,30 @@
 
 <section class="banner banner-one">
 
-  <div>
+  <div class="animar">
     <h2>
       Atendimento com qualidade,
       confiança e transparência.
     </h2>
 
     <p>
-      Cada serviço é feito
-      com atenção aos detalhes.
+      Cada serviço é feito com atenção aos detalhes,
+      cuidado com as peças e teste final.
     </p>
   </div>
 
 </section>
 
+
 <section id="galeria" class="section">
 
-  <div class="section-title">
+  <div class="section-title animar">
     <span>Serviços</span>
     <h2>Serviços realizados</h2>
+    <p>
+      Veja alguns registros de manutenção,
+      limpeza e finalização de equipamentos.
+    </p>
   </div>
 
   <div class="carousel-card animar">
@@ -155,13 +183,16 @@
 
       <div class="carousel-info">
 
+        <span id="carouselCounter">
+          1 / 7
+        </span>
+
         <h3 id="carouselTitle">
           Notebook recebido
         </h3>
 
         <p id="carouselText">
-          Equipamento recebido
-          para avaliação e manutenção.
+          Equipamento recebido para avaliação e manutenção.
         </p>
 
       </div>
@@ -180,15 +211,14 @@
 
 <section class="banner banner-two">
 
-  <div>
+  <div class="animar">
     <h2>
       Manutenção preventiva
       evita problemas maiores.
     </h2>
 
     <p>
-      Cuide do seu equipamento
-      antes que ele pare de funcionar.
+      Cuide do seu equipamento antes que ele pare de funcionar.
     </p>
   </div>
 
@@ -196,7 +226,7 @@
 
 <section id="avaliacoes" class="section">
 
-  <div class="section-title">
+  <div class="section-title animar">
     <span>Avaliações</span>
     <h2>O que os clientes dizem</h2>
   </div>
@@ -210,8 +240,7 @@
       </div>
 
       <p>
-        “Serviço excelente!
-        Meu notebook voltou
+        “Serviço excelente! Meu notebook voltou
         funcionando perfeitamente.”
       </p>
 
@@ -223,7 +252,156 @@
 
 </section>
 
-<section id="contato" class="contact">
+<section id="perguntas" class="section faq-section">
+
+  <div class="section-title animar">
+    <span>Perguntas Frequentes</span>
+
+    <h2>Dúvidas comuns</h2>
+
+    <p>
+      Tire suas principais dúvidas antes de solicitar
+      manutenção ou orçamento.
+    </p>
+  </div>
+
+  <div class="faq-container animar">
+
+    <!-- ITEM -->
+
+    <div class="faq-item active">
+
+      <button class="faq-question">
+
+        Como funciona o orçamento?
+
+        <div class="faq-icon">
+          <span></span>
+          <span></span>
+        </div>
+
+      </button>
+
+      <div class="faq-answer">
+        <p>
+          Você entra em contato pelo WhatsApp,
+          explica o problema e, se possível,
+          envia fotos ou vídeos para avaliação inicial.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- ITEM -->
+
+    <div class="faq-item">
+
+      <button class="faq-question">
+
+        O equipamento é testado antes da entrega?
+
+        <div class="faq-icon">
+          <span></span>
+          <span></span>
+        </div>
+
+      </button>
+
+      <div class="faq-answer">
+        <p>
+          Sim. Todo equipamento passa por testes
+          após a manutenção para verificar desempenho
+          e funcionamento correto.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- ITEM -->
+
+    <div class="faq-item">
+
+      <button class="faq-question">
+
+        Você faz limpeza interna?
+
+        <div class="faq-icon">
+          <span></span>
+          <span></span>
+        </div>
+
+      </button>
+
+      <div class="faq-answer">
+        <p>
+          Sim. A limpeza ajuda na refrigeração,
+          evita superaquecimento e melhora a
+          conservação do equipamento.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- ITEM -->
+
+    <div class="faq-item">
+
+      <button class="faq-question">
+
+        Faz troca de teclado e tela?
+
+        <div class="faq-icon">
+          <span></span>
+          <span></span>
+        </div>
+
+      </button>
+
+      <div class="faq-answer">
+        <p>
+          Sim. Faço troca de teclado, tela
+          e outros componentes dependendo
+          do modelo do notebook.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- ITEM -->
+
+    <div class="faq-item">
+
+      <button class="faq-question">
+
+        Quanto tempo demora o serviço?
+
+        <div class="faq-icon">
+          <span></span>
+          <span></span>
+        </div>
+
+      </button>
+
+      <div class="faq-answer">
+        <p>
+          O prazo depende do tipo de manutenção,
+          disponibilidade de peças e complexidade
+          do problema encontrado.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section id="contato" class="contact animar">
+
+  <span class="contact-tag">
+    Atendimento via WhatsApp
+  </span>
 
   <h2>
     Precisa de manutenção
@@ -231,8 +409,8 @@
   </h2>
 
   <p>
-    Chame agora no WhatsApp
-    e solicite um orçamento.
+    Chame agora no WhatsApp e solicite um orçamento.
+    Explique o problema do equipamento e envie fotos se precisar.
   </p>
 
   <a
@@ -265,11 +443,12 @@
 
 </a>
 
+
 <footer>
 
   <p>
     © <span id="ano"></span>
-    GHS Suporte Técnico -
+    Gustavo Henrique -
     Todos os direitos reservados.
   </p>
 
