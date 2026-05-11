@@ -99,6 +99,7 @@ body {
     linear-gradient(90deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.48)),
     url("img/fundo-h3ro.png");
   background-size: cover;
+  background-attachment: fixed;
   background-position: center;
   animation: moverFundo 8s ease-in-out infinite alternate;
   display: flex;
@@ -191,7 +192,7 @@ body {
 
 .scroll-indicator {
   position: absolute;
-  bottom: 55px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -699,6 +700,9 @@ footer {
   .header {
   display: none;
 }
+  .banner{
+    background-attachment: fixed;
+  }
 
   .mouse-scroll {
     display: none;
