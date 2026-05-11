@@ -26,39 +26,23 @@ elementos.forEach((elemento) => {
   observer.observe(elemento);
 });
 
-/* HEADER AO ROLAR */
+/* HEADER */
 
 const header = document.querySelector(".header");
-const backTop = document.getElementById("backTop");
 
 window.addEventListener("scroll", () => {
 
   if (header) {
+
     if (window.scrollY > 40) {
       header.classList.add("scrolled");
     } else {
       header.classList.remove("scrolled");
     }
-  }
 
-  if (backTop) {
-    if (window.scrollY > 500) {
-      backTop.classList.add("show");
-    } else {
-      backTop.classList.remove("show");
-    }
   }
 
 });
-
-if (backTop) {
-  backTop.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  });
-}
 
 /* MENU MOBILE */
 
@@ -68,6 +52,7 @@ const menu = document.getElementById("menu");
 if (menuToggle && menu) {
 
   menuToggle.addEventListener("click", () => {
+
     menu.classList.toggle("ativo");
 
     if (menu.classList.contains("ativo")) {
@@ -75,259 +60,266 @@ if (menuToggle && menu) {
     } else {
       menuToggle.textContent = "☰";
     }
+
   });
 
   const linksMenu = menu.querySelectorAll("a");
 
   linksMenu.forEach((link) => {
+
     link.addEventListener("click", () => {
+
       menu.classList.remove("ativo");
       menuToggle.textContent = "☰";
+
     });
-  });
-
-}
-
-/* CONTADORES */
-
-const contadores = document.querySelectorAll(".contador");
-let contadorIniciado = false;
-
-function iniciarContadores() {
-
-  contadores.forEach((contador) => {
-
-    const numeroFinal = Number(contador.dataset.numero);
-    let numeroAtual = 0;
-
-    const velocidade = Math.max(20, 1200 / numeroFinal);
-
-    const intervalo = setInterval(() => {
-
-      numeroAtual++;
-
-      contador.textContent = numeroAtual;
-
-      if (numeroAtual >= numeroFinal) {
-        contador.textContent = numeroFinal;
-        clearInterval(intervalo);
-      }
-
-    }, velocidade);
 
   });
 
 }
 
-const observerContador = new IntersectionObserver((entradas) => {
+/* CARROSSEIS */
 
-  entradas.forEach((entrada) => {
+const carrosseis = {
 
-    if (entrada.isIntersecting && !contadorIniciado) {
-      contadorIniciado = true;
-      iniciarContadores();
+  servico1: [
+
+    {
+      src: "img/notebook-antes.jpeg",
+      titulo: "Notebook recebido",
+      texto: "Equipamento recebido para avaliação e manutenção."
+    },
+
+    {
+      src: "img/produtos-limpeza.jpeg",
+      titulo: "Produtos utilizados",
+      texto: "Materiais usados para limpeza e cuidado com o equipamento."
+    },
+
+    {
+      src: "img/manutencao-1.jpeg",
+      titulo: "Manutenção interna",
+      texto: "Notebook aberto para verificação, limpeza e manutenção."
+    },
+
+    {
+      src: "img/manutencao-2.jpeg",
+      titulo: "Organização das peças",
+      texto: "Serviço feito com cuidado e peças bem organizadas."
+    },
+
+    {
+      src: "img/notebook-depois.jpeg",
+      titulo: "Notebook finalizado",
+      texto: "Equipamento montado e pronto para os testes finais."
+    },
+
+    {
+      src: "img/notebook-ligado.jpeg",
+      titulo: "Teste final",
+      texto: "Notebook ligado e testado após a manutenção."
+    },
+
+    {
+      src: "img/panfletos.jpeg",
+      titulo: "Serviço entregue ao cliente",
+      texto: "Finalização com agradecimento e cuidado na entrega."
     }
 
-  });
+  ],
 
-}, {
-  threshold: 0.4
-});
+  servico2: [
 
-if (contadores.length > 0) {
-  observerContador.observe(contadores[0]);
-}
+    {
+      src: "img/ram-smart.jpeg",
+      titulo: "Teste com memória Kingston",
+      texto: "Notebook LG ligava, porém não dava imagem durante o teste com a memória Kingston."
+    },
 
-/* CARROSSEL */
+    {
+      src: "img/notebook-aberto-lg.jpeg",
+      titulo: "Diagnóstico notebook LG",
+      texto: "Notebook aberto para análise do defeito de ausência de imagem e testes dos componentes internos."
+    },
 
-const imagens = [
+    {
+      src: "img/ram-kingston.jpeg",
+      titulo: "Teste com memória Smart",
+      texto: "A memória Kingston não funcionou corretamente, então foi usada a memória Smart conectada para teste."
+    },
 
-  {
-    src: "img/notebook-antes.jpeg",
-    titulo: "Notebook recebido",
-    texto: "Equipamento recebido para avaliação e manutenção."
-  },
+    {
+      src: "img/notebook-lg-teclado.jpeg",
+      titulo: "Botão power consertado",
+      texto: "Botão de ligar/desligar reparado e funcionando novamente."
+    },
 
-  {
-    src: "img/produtos-limpeza.jpeg",
-    titulo: "Produtos utilizados",
-    texto: "Materiais usados para limpeza e cuidado com o equipamento."
-  },
+    {
+      src: "img/notebook-lg-tampa.jpeg",
+      titulo: "Notebook LG finalizado",
+      texto: "Notebook LG finalizado após correção do botão power e testes no problema de imagem."
+    }
 
-  {
-    src: "img/manutencao-1.jpeg",
-    titulo: "Manutenção interna",
-    texto: "Notebook aberto para verificação, limpeza e manutenção."
-  },
+  ]
 
-  {
-    src: "img/manutencao-2.jpeg",
-    titulo: "Organização das peças",
-    texto: "Serviço feito com cuidado e peças bem organizadas."
-  },
+};
 
-  {
-    src: "img/notebook-depois.jpeg",
-    titulo: "Notebook finalizado",
-    texto: "Equipamento montado e pronto para os testes finais."
-  },
+document.querySelectorAll(".carousel-card").forEach((carouselCard) => {
 
-  {
-    src: "img/notebook-ligado.jpeg",
-    titulo: "Teste final",
-    texto: "Notebook ligado e testado após a manutenção."
-  },
+  const nomeCarousel = carouselCard.dataset.carousel;
+  const imagens = carrosseis[nomeCarousel];
 
-  {
-    src: "img/panfletos.jpeg",
-    titulo: "Serviço entregue ao cliente",
-    texto: "Finalização com agradecimento e cuidado na entrega."
-  }
-
-];
-
-let imagemAtual = 0;
-let intervaloCarousel;
-
-const carouselImage = document.getElementById("carouselImage");
-const carouselTitle = document.getElementById("carouselTitle");
-const carouselText = document.getElementById("carouselText");
-const carouselCounter = document.getElementById("carouselCounter");
-const prevBtn = document.getElementById("prevBtn");
-const nextBtn = document.getElementById("nextBtn");
-const carouselDots = document.getElementById("carouselDots");
-
-function atualizarCarousel() {
-
-  if (!carouselImage || !carouselTitle || !carouselText) {
+  if (!imagens) {
     return;
   }
 
-  carouselImage.style.opacity = "0";
+  let imagemAtual = 0;
+  let intervaloCarousel;
 
-  setTimeout(() => {
+  const carouselImage = carouselCard.querySelector(".carousel-image");
+  const carouselTitle = carouselCard.querySelector(".carousel-title");
+  const carouselText = carouselCard.querySelector(".carousel-text");
+  const carouselCounter = carouselCard.querySelector(".carousel-counter");
+  const prevBtn = carouselCard.querySelector(".prev");
+  const nextBtn = carouselCard.querySelector(".next");
+  const carouselDots = document.querySelector(`[data-dots="${nomeCarousel}"]`);
 
-    carouselImage.src = imagens[imagemAtual].src;
-    carouselTitle.textContent = imagens[imagemAtual].titulo;
-    carouselText.textContent = imagens[imagemAtual].texto;
+  if (
+    !carouselImage ||
+    !carouselTitle ||
+    !carouselText ||
+    !carouselCounter ||
+    !prevBtn ||
+    !nextBtn ||
+    !carouselDots
+  ) {
+    return;
+  }
 
-    if (carouselCounter) {
+  function atualizarCarousel() {
+
+    carouselImage.style.opacity = "0";
+
+    setTimeout(() => {
+
+      carouselImage.src = imagens[imagemAtual].src;
+      carouselTitle.textContent = imagens[imagemAtual].titulo;
+      carouselText.textContent = imagens[imagemAtual].texto;
       carouselCounter.textContent = `${imagemAtual + 1} / ${imagens.length}`;
-    }
 
-    carouselImage.style.opacity = "1";
+      carouselImage.style.opacity = "1";
+
+      atualizarDots();
+
+    }, 200);
+
+  }
+
+  function criarDots() {
+
+    carouselDots.innerHTML = "";
+
+    imagens.forEach((_, index) => {
+
+      const dot = document.createElement("span");
+
+      dot.classList.add("carousel-dot");
+
+      dot.addEventListener("click", () => {
+
+        imagemAtual = index;
+
+        atualizarCarousel();
+
+        reiniciarAutoPlay();
+
+      });
+
+      carouselDots.appendChild(dot);
+
+    });
 
     atualizarDots();
 
-  }, 200);
-
-}
-
-function criarDots() {
-
-  if (!carouselDots) {
-    return;
   }
 
-  carouselDots.innerHTML = "";
+  function atualizarDots() {
 
-  imagens.forEach((_, index) => {
+    const dots = carouselDots.querySelectorAll(".carousel-dot");
 
-    const dot = document.createElement("span");
+    dots.forEach((dot, index) => {
 
-    dot.classList.add("carousel-dot");
-
-    dot.addEventListener("click", () => {
-
-      imagemAtual = index;
-      atualizarCarousel();
-      reiniciarAutoPlay();
+      dot.classList.toggle("active", index === imagemAtual);
 
     });
 
-    carouselDots.appendChild(dot);
-
-  });
-
-  atualizarDots();
-
-}
-
-function atualizarDots() {
-
-  const dots = document.querySelectorAll(".carousel-dot");
-
-  dots.forEach((dot, index) => {
-
-    dot.classList.toggle("active", index === imagemAtual);
-
-  });
-
-}
-
-function proximaImagem() {
-
-  imagemAtual++;
-
-  if (imagemAtual >= imagens.length) {
-    imagemAtual = 0;
   }
 
-  atualizarCarousel();
+  function proximaImagem() {
 
-}
+    imagemAtual++;
 
-function imagemAnterior() {
+    if (imagemAtual >= imagens.length) {
+      imagemAtual = 0;
+    }
 
-  imagemAtual--;
+    atualizarCarousel();
 
-  if (imagemAtual < 0) {
-    imagemAtual = imagens.length - 1;
   }
 
-  atualizarCarousel();
+  function imagemAnterior() {
 
-}
+    imagemAtual--;
 
-function iniciarAutoPlay() {
+    if (imagemAtual < 0) {
+      imagemAtual = imagens.length - 1;
+    }
 
-  intervaloCarousel = setInterval(() => {
-    proximaImagem();
-  }, 5000);
+    atualizarCarousel();
 
-}
+  }
 
-function reiniciarAutoPlay() {
+  function iniciarAutoPlay() {
 
-  clearInterval(intervaloCarousel);
-  iniciarAutoPlay();
+    intervaloCarousel = setInterval(() => {
 
-}
+      proximaImagem();
 
-if (
-  carouselImage &&
-  carouselTitle &&
-  carouselText &&
-  prevBtn &&
-  nextBtn &&
-  carouselDots
-) {
+    }, 5000);
+
+  }
+
+  function reiniciarAutoPlay() {
+
+    clearInterval(intervaloCarousel);
+
+    iniciarAutoPlay();
+
+  }
 
   nextBtn.addEventListener("click", () => {
+
     proximaImagem();
+
     reiniciarAutoPlay();
+
   });
 
   prevBtn.addEventListener("click", () => {
+
     imagemAnterior();
+
     reiniciarAutoPlay();
+
   });
 
   criarDots();
+
   atualizarCarousel();
+
   iniciarAutoPlay();
 
-}
+});
 
 /* FAQ */
 
@@ -335,8 +327,11 @@ const faqItems = document.querySelectorAll(".faq-item");
 
 faqItems.forEach((item) => {
 
-  const pergunta =
-    item.querySelector(".faq-question");
+  const pergunta = item.querySelector(".faq-question");
+
+  if (!pergunta) {
+    return;
+  }
 
   pergunta.addEventListener("click", () => {
 
