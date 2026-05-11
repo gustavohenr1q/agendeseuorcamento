@@ -191,7 +191,7 @@ body {
 
 .scroll-indicator {
   position: absolute;
-  bottom: 3px;
+  bottom: 55px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -703,7 +703,7 @@ footer {
   .mouse-scroll {
     display: none;
   }
-
+  
   .mobile-scroll-phone {
     display: flex;
     align-items: center;
