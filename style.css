@@ -704,6 +704,14 @@ footer {
     background-attachment: fixed;
   }
 
+  .banner-one{
+    background-attachment: fixed;
+  }
+
+  .banner-two{
+    background-attachment: fixed;
+  }
+
   .mouse-scroll {
     display: none;
   }
